@@ -13,7 +13,7 @@ global:
   ##
   #imagePullSecrets: [""]
   ## ldapDomain , can be explicit (e.g dc=toto,c=ca) or domain based (e.g example.com)
-  ldapDomain: "example.org"
+  ldapDomain: "dc=ssigroup,dc=io"
   # Specifies an existing secret to be used for admin and config user passwords. The expected key are LDAP_ADMIN_PASSWORD and LDAP_CONFIG_ADMIN_PASSWORD.
   # existingSecret: ""
   ## Default Passwords to use, stored as a secret. Not used if existingSecret is set.
@@ -55,11 +55,11 @@ readOnlyReplicaCount: 0
 
 image:
   # From repository https://hub.docker.com/r/bitnami/openldap/
-  #repository: bitnami/openldap
-  #tag: 2.6.3
+  repository: bitnami/openldap
+  tag: 2.5.18
   # Temporary fix
-  repository: jpgouin/openldap
-  tag: 2.6.8-fix
+  #repository: jpgouin/openldap
+  #tag: 2.6.8-fix
   pullPolicy: Always
   pullSecrets: []
 
@@ -158,15 +158,15 @@ pdb:
 
 ## User list to create (comma separated list) , can't be use with customLdifFiles
 ## Default set by bitnami image
-# users: user01,user02
+users: user01,user02
 
 ## User password to create (comma separated list, one for each user)
 ## Default set by bitnami image
-# userPasswords: bitnami1, bitnami2
+userPasswords: keycloak1, psql2
 
 ## Group to create and add list of user above
   ## Default set by bitnami image
-# group: readers
+group: readers
 
 # Custom openldap schema files used to be used in addition to default schemas
 # Note that the supplied files are sorted by name and inserted into 'LDAP_EXTRA_SCHEMAS' env var
