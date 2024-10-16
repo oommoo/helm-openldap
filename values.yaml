@@ -158,11 +158,11 @@ pdb:
 
 ## User list to create (comma separated list) , can't be use with customLdifFiles
 ## Default set by bitnami image
-users: user01,user02
+users: user01,user02, user03
 
 ## User password to create (comma separated list, one for each user)
 ## Default set by bitnami image
-userPasswords: keycloak1, psql2
+userPasswords: keycloak1, psql2, argocd3
 
 ## Group to create and add list of user above
   ## Default set by bitnami image
